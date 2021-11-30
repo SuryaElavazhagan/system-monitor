@@ -10,7 +10,7 @@ using std::string;
 // REMOVE: [[maybe_unused]] once you define the function
 string Format::ElapsedTime(long seconds) {
     long hours = seconds / (60 * 60);
-    long minutes = minutes / 60;
+    long minutes = (seconds / 60) % 60;
     long secs = seconds % 60;
     
     string str_hours = hours < 10 ? ('0' + std::to_string(hours)) : std::to_string(hours);
